@@ -1,6 +1,6 @@
 ### 1. 项目技术路线
 
-`JDK8` + `Spring-Boot` + `Vue3`
+`JDK8` + `Spring-Boot` + `Vue3` + `ElementUI-plus`
 
 
 
