@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hanjiang.etm.statistics.mapper.TUserActiveMapper">
+
+    <resultMap id="activeInfoMap" type="com.hanjiang.etm.common.vo.UserActiveVo">
+        <result property="time" column="time"/>
+        <result property="value" column="value"/>
+    </resultMap>
+
+    <select id="selectUserActive" resultMap="activeInfoMap">
+        SELECT t.* FROM (
+            SELECT active_time AS `time`, count(*) AS `value` FROM ${dbName} GROUP BY active_time ORDER BY time DESC LIMIT 31 ) t
+        ORDER BY
+            t.time
+    </select>
+
+</mapper>

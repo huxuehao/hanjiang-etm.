@@ -1,0 +1,42 @@
+.box {
+    width: 100%;
+    height: auto;
+    // padding: 10px;
+    position: relative;
+    border-radius: 3px;
+    font-size: 16px;
+  
+    .number {
+      float: left;
+      width: 40px;
+      line-height: 30px;
+      text-align: left;
+      font-weight: bolder;
+    }
+  
+    .content {
+      float: left;
+      width: calc(100% - 90px);
+      line-height: 30px;
+      position: relative;
+      margin-bottom: 5px;
+  
+      .option {
+        line-height: 30px;
+        font-size: 16px !important;
+      }
+    }
+  }
+  
+  .select {
+    transition: 0.3s;
+  }
+  .select:hover {
+    background-color: #e6edf1;
+  }
+  .question-info {
+    border: none;
+    margin-left: 40px;
+    width: calc(100% - 90px);
+    background-color: rgba(241, 247, 250, 0.5);
+  }

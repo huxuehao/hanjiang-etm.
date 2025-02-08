@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hanjiang.etm.train.mapper.TTrainingMapper">
+
+    <resultMap id="trainInfoMap" type="com.hanjiang.etm.common.vo.ExamTrainInfo">
+        <result column="index" property="index" />
+        <result column="value" property="value" />
+    </resultMap>
+    <select id="selectTrainInfo" resultMap="trainInfoMap">
+        -- 未发布
+        SELECT
+            1 AS `index`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+            AND published = 0
+        UNION ALL
+        -- 已发布
+        SELECT
+            2 AS `index`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+            AND published = 1
+        UNION ALL
+        -- 未开始
+        SELECT
+            3 AS `index`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+            AND published = 1
+            AND limit_start_time <![CDATA[ >= ]]> #{currentTime}
+        UNION ALL
+        -- 进行中
+        SELECT
+            4 AS `index`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+            AND published = 1
+            AND limit_start_time <![CDATA[ < ]]> #{currentTime} AND limit_end_time <![CDATA[ >= ]]> #{currentTime}
+        UNION ALL
+        -- 已结束
+        SELECT
+            5 AS `index`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+            AND published = 1
+            AND limit_end_time <![CDATA[ < ]]> #{currentTime}
+    </select>
+</mapper>

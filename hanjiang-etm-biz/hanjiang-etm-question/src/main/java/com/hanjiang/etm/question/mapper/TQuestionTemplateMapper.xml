@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hanjiang.etm.question.mapper.TQuestionTemplateMapper">
+    <resultMap id="questionTypeMap" type="com.hanjiang.etm.common.vo.QuestionTypeVo">
+        <result column="name" property="name"/>
+        <result column="value" property="value"/>
+    </resultMap>
+    <select id="selectQuestionType" resultMap="questionTypeMap">
+        SELECT
+            CASE
+                WHEN type = 1 THEN '单选题'
+                WHEN type = 2 THEN '多选题'
+                WHEN type = 3 THEN '判断题'
+                WHEN type = 4 THEN '填空题'
+                WHEN type = 5 THEN '解答题'
+                ELSE type
+            END AS `name`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+        GROUP BY
+            type
+    </select>
+
+    <resultMap id="questionLevelMap" type="com.hanjiang.etm.common.vo.QuestionLevel">
+        <result column="type" property="type"/>
+        <result column="value" property="value"/>
+    </resultMap>
+    <select id="selectQuestionLevel" resultMap="questionLevelMap">
+        SELECT
+            `type`,
+            count(*) AS `value`
+        FROM
+            ${dbName}
+        WHERE
+            del_flag = 0
+           and `level` = #{level}
+        GROUP BY
+            `type`
+    </select>
+</mapper>

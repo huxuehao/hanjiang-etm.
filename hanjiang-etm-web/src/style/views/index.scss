@@ -1,0 +1,39 @@
+.search-box {
+    min-height: 0;
+    background-color: #fff;
+    padding: 10px 10px 5px 0;
+    .query-form {
+      background-color: #F5F7FA;
+      padding: 7px 10px;
+      position: relative;
+      .form-item {
+        margin-right: 10px;
+        margin-top: 3px !important;
+        margin-bottom: 3px !important;
+        .input-search {
+          width: 180px !important;
+        }
+      }
+    }
+  }
+  
+  .button-box {
+    max-height: 40px;
+    min-height: 0;
+    padding: 0 10px 0 0px;
+    background-color: #fff;
+  }
+  
+  .data-list {
+    background-color: white;
+    padding: 5px 10px 10px 0;
+    position: relative;
+  }
+  
+  .page-box {
+    padding: 0 10px 0 0;
+    background-color: white;
+    .page {
+      float: right;
+    }
+  }
