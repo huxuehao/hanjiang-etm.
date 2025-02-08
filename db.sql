@@ -1310,9 +1310,7 @@ CREATE TABLE `t_storage_protocol`  (
 -- ----------------------------
 -- Records of t_storage_protocol
 -- ----------------------------
-INSERT INTO `t_storage_protocol` VALUES (1880066354485772289, 'minio（潞安）', 'S3', '{\"endpoint\":\"http://10.32.1.118:9001\",\"accessKey\":\"7zgIXj3gpBMPmhXDPGOF\",\"secretKey\":\"j3XP7S00Cllb4vl43l3CTGjjgVmlyXzqIm9TtKx6\",\"bucketName\":\"etm\"}', '1111111111111111111', '2025-01-17 09:35:23', '1111111111111111111', '2025-01-22 23:27:34', '我的minio', 0, 0);
 INSERT INTO `t_storage_protocol` VALUES (1881897103669075970, '本地存储（windows）', 'LOCAL', '{\"localDir\":\"E:\\\\tmp\\\\etm\"}', '1111111111111111111', '2025-01-22 10:50:08', '1111111111111111111', '2025-02-03 00:21:59', NULL, 1, 0);
-INSERT INTO `t_storage_protocol` VALUES (1881975262422781954, 'ftp（东华）', 'FTP', '{\"host\":\"172.18.18.157\",\"port\":\"21\",\"userName\":\"huxuehao\",\"password\":\"123456\"}', '1111111111111111111', '2025-01-22 16:00:43', '1111111111111111111', '2025-01-22 23:52:20', NULL, 0, 0);
 
 -- ----------------------------
 -- Table structure for t_task
