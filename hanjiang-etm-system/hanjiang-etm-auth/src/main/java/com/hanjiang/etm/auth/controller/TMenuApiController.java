@@ -4,14 +4,19 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.hanjiang.etm.auth.service.TMenuApiService;
 import com.hanjiang.etm.common.auth.MenuTag;
+import com.hanjiang.etm.common.consts.Constant;
 import com.hanjiang.etm.common.entity.TMenuApi;
+import com.hanjiang.etm.common.entity.TUser;
 import com.hanjiang.etm.common.mp.support.MP;
 import com.hanjiang.etm.common.mp.support.PageParams;
 import com.hanjiang.etm.common.r.R;
+import com.hanjiang.etm.common.util.CacheUtil;
+import com.hanjiang.etm.user.service.TUserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 描述：菜单接口
@@ -23,11 +28,21 @@ import java.util.List;
 @MenuTag(code = "system_apimanager")
 public class TMenuApiController {
     private final TMenuApiService menuApiService;
+    private final TUserService userService;
+    private final CacheUtil cacheUtil;
 
-    public TMenuApiController(TMenuApiService menuApiService) {
+    public TMenuApiController(TMenuApiService menuApiService, TUserService userService, CacheUtil cacheUtil) {
         this.menuApiService = menuApiService;
+        this.userService = userService;
+        this.cacheUtil = cacheUtil;
     }
 
+    private void clearUserApiAuthCache() {
+        List<TUser> users = userService.list();
+        for (TUser user : users) {
+            cacheUtil.del(Constant.API_AUTH_CACHE_PRE + user.getId());
+        }
+    }
     @PreAuthorize("@ps.hasPermission('post::menu-api:add')")
     @PostMapping(value = "/add", name = "新增")
     public R<?> add(@RequestBody TMenuApi body) {
@@ -48,7 +63,9 @@ public class TMenuApiController {
     @PreAuthorize("@ps.hasPermission('post::menu-api:delete')")
     @PostMapping(value = "/delete", name = "删除")
     public R<?> delete(@RequestBody List<Long> ids) {
-        return R.data(menuApiService.removeBatchByIds(ids));
+        menuApiService.removeBatchByIds(ids);
+        clearUserApiAuthCache();
+        return R.data(true);
     }
 
     @PreAuthorize("@ps.hasPermission('post::menu-api:valid')")
@@ -58,7 +75,9 @@ public class TMenuApiController {
         uw.in("id", ids);
         uw.set("valid", 1);
         uw.set("next_time_millis", System.currentTimeMillis());
-        return R.data(menuApiService.update(uw));
+        menuApiService.update(uw);
+        clearUserApiAuthCache();
+        return R.data(true);
     }
 
     @PreAuthorize("@ps.hasPermission('post::menu-api:unValid')")
@@ -68,7 +87,9 @@ public class TMenuApiController {
         uw.in("id", ids);
         uw.set("valid", 0);
         uw.set("next_time_millis", System.currentTimeMillis());
-        return R.data(menuApiService.update(uw));
+        menuApiService.update(uw);
+        clearUserApiAuthCache();
+        return R.data(true);
     }
 
     @PreAuthorize("@ps.hasPermission('post::menu-api:update')")
@@ -79,8 +100,13 @@ public class TMenuApiController {
         qw.ne("id", body.getId());
         List<TMenuApi> list = menuApiService.list(qw);
         if(list == null || list.isEmpty() || list.get(0).getId().equals(body.getId())) {
+            TMenuApi api = menuApiService.getById(body.getId());
             body.setNextTimeMillis(System.currentTimeMillis());
-            return R.data(menuApiService.updateById(body));
+            menuApiService.updateById(body);
+            if (!Objects.equals(api.getValid(), body.getValid())) {
+                clearUserApiAuthCache();
+            }
+            return R.data(true);
         } else if(list.get(0).getCode().equals(body.getCode())) {
             return R.fail("接口编号已存在");
         } else {

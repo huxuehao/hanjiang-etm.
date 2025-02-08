@@ -23,5 +23,9 @@
             <groupId>com.hanjiang.etm</groupId>
             <artifactId>hanjiang-etm-menu</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.hanjiang.etm</groupId>
+            <artifactId>hanjiang-etm-user</artifactId>
+        </dependency>
     </dependencies>
 </project>

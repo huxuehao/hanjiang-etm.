@@ -27,6 +27,11 @@
                 <artifactId>hanjiang-etm-params</artifactId>
                 <version>${parent.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.hanjiang.etm</groupId>
+                <artifactId>hanjiang-etm-user</artifactId>
+                <version>${parent.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
