@@ -10,6 +10,26 @@
 
 本项目是一个在线考试/培训平台，但仅仅是在线考试/培训平台。
 
+```sh
+hanjiang-etm                      # 项目主目录
+  -- hanjiang-etm-admin           # 后端：启动模块
+  -- hanjiang-etm-biz             # 后端：业务目录
+    -- hanjiang-etm-etm           # 后端：考试管理/培训管理/任务中心模块
+    -- hanjiang-etm-paper         # 后端：试卷管理模块
+    -- hanjiang-etm-question      # 后端：题目管理模块
+    -- hanjiang-etm-statistics    # 后端：统计分析模块
+  -- hanjiang-etm-common          # 后端：公共依赖模块
+  -- hanjiang-etm-system          # 后端：系统目录
+    -- hanjiang-etm-auth          # 后端：系统权限模块
+    -- hanjiang-etm-menu          # 后端：系统菜单模块
+    -- hanjiang-etm-org           # 后端：组织机构模块
+    -- hanjiang-etm-params        # 后端：系统参数模块
+    -- hanjiang-etm-resource      # 后端：资源管理模块
+    -- hanjiang-etm-user          # 后端：用户管理模块
+  -- hanjiang-etm-web             # 前端：前端项目
+  -- db.sql                       # 数据库：数据库初始化脚本
+```
+
 #### 2.1. 考试培训模块
 
 **① 支持 5 种试题类型**
