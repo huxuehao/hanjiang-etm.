@@ -7,6 +7,7 @@ import PageHeader from "@/components/layout/PageHeader.vue";
 import { ref } from "vue";
 import setting from "@/config/setting"
 import { useUserStore } from "@/stores/user";
+import UserInfoForm from "@/components/user/UserInfoForm.vue";
 
 let collapse = ref(false);
 
@@ -24,12 +25,17 @@ const changeBar = () => {
 const goBackHome = () => {
   router.push({ path: setting.homePath });
 };
+
+let userInfoVisible = ref(false)
+const openUserInfo = () => {
+  userInfoVisible.value = true
+};
 </script>
 
 <template>
   <div class="box">
     <el-row :gutter="0" class="header-nav">
-      <HeaderNav></HeaderNav>
+      <HeaderNav @openUserInfo="openUserInfo"></HeaderNav>
     </el-row>
     <el-row :gutter="0" class="header-tag">
       <el-col :span="23">
@@ -41,10 +47,10 @@ const goBackHome = () => {
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>
-                <el-button v-permission="'home'" link type="text" icon="HomeFilled" @click="goBackHome">回到首页</el-button>
+                <el-button v-permission="'home'" link type="text" icon="HomeFilled" @click="goBackHome()">回到首页</el-button>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-button v-permission="'userInfo'" link type="text" icon="UserFilled">个人信息</el-button>
+                <el-button v-permission="'userInfo'" link type="text" icon="UserFilled" @click="openUserInfo()">个人信息</el-button>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -79,6 +85,16 @@ const goBackHome = () => {
       </el-col>
     </el-row>
   </div>
+  <!-- 个人信息 -->
+  <el-drawer
+    title="个人信息"
+    v-model="userInfoVisible"
+    :wrapper-closable="true"
+    append-to-body
+    size="40%"
+  >
+  <UserInfoForm v-if="userInfoVisible" />
+  </el-drawer>
 </template>
 
 <style lang="scss" scoped>

@@ -4,11 +4,13 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.hanjiang.etm.common.auth.MenuTag;
 import com.hanjiang.etm.common.auth.PassAuth;
+import com.hanjiang.etm.common.dto.RePwdDto;
 import com.hanjiang.etm.common.entity.LoginBody;
 import com.hanjiang.etm.common.entity.TUser;
 import com.hanjiang.etm.common.mp.support.MP;
 import com.hanjiang.etm.common.mp.support.PageParams;
 import com.hanjiang.etm.common.r.R;
+import com.hanjiang.etm.common.util.AuthUtil;
 import com.hanjiang.etm.common.util.EncryptionUtil;
 import com.hanjiang.etm.common.util.Func;
 import com.hanjiang.etm.user.service.TUserService;
@@ -53,6 +55,19 @@ public class TUserController {
         } else {
             return R.fail("未知字段重复");
         }
+    }
+
+    @PreAuthorize("@ps.hasPermission('post::user:re-pwd')")
+    @PostMapping(value = "/re-pwd", name = "重置登录密码")
+    public R<?> rePwd(@RequestBody RePwdDto body) {
+        TUser user = userService.getById(AuthUtil.getUserId());
+
+        if (!EncryptionUtil.md5(body.getOldPwd()).equals(user.getPassword())) {
+            throw new RuntimeException("旧密码错误");
+        }
+
+        user.setPassword(EncryptionUtil.md5(body.getNewPwd()));
+        return R.data(userService.updateById(user));
     }
 
     @PreAuthorize("@ps.hasPermission('post::user:delete')")
@@ -122,6 +137,12 @@ public class TUserController {
     @GetMapping(value = "/selectOne", name = "根据ID唯一获取")
     public R<?> selectOne(@RequestParam Long id) {
         return R.data(userService.getById(id));
+    }
+
+    @PreAuthorize("@ps.hasPermission('get::user:current-user-info')")
+    @GetMapping(value = "/current-user-info", name = "获取当前用户的用户信息")
+    public R<?> currentUserInfo() {
+        return R.data(userService.getById(AuthUtil.getUserId()));
     }
 
     @PreAuthorize("@ps.hasPermission('post::user:selectByIds')")

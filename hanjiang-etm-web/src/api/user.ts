@@ -22,6 +22,17 @@ export const userUpdate = (data: any) => {
   });
 };
 
+export const useRePwd = (data: any) => {
+  return request({
+    url: "/user/re-pwd",
+    method: "post",
+    headers: {
+      unrepeat: true
+    },
+    data: data,
+  });
+};
+
 export const userDelete = (ids: string[]) => {
   return request({
     url: "/user/delete",
@@ -80,6 +91,13 @@ export const selectByIds = (ids: any[]) => {
     url: "/user/selectByIds",
     method: "post",
     data: ids,
+  });
+};
+
+export const selectCurrentUserInfo = () => {
+  return request({
+    url: "/user/current-user-info",
+    method: "get",
   });
 };
 

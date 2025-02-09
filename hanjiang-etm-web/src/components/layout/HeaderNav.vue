@@ -23,6 +23,11 @@ const handelLogout = () => {
     })
   });
 };
+
+const emit = defineEmits(["openUserInfo"])
+const goUserInfo = () => {
+  emit("openUserInfo")
+};
 </script>
 
 <template>
@@ -34,7 +39,7 @@ const handelLogout = () => {
     <el-col :span="12" class="control">
       <el-icon v-permission="'home'" @click="goBackHome" class="hover pointer icon" title="回到首页"
         ><House/></el-icon>
-      <el-icon v-permission="'userInfo'" class="hover pointer icon" title="个人信息"
+      <el-icon v-permission="'userInfo'" @click="goUserInfo" class="hover pointer icon" title="个人信息"
         ><User/></el-icon>
       <el-icon @click="handelLogout()" class="hover pointer icon" title="退出登录"
         ><SwitchButton/></el-icon>
