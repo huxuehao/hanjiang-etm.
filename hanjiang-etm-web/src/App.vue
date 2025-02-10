@@ -22,8 +22,8 @@ body {
 }
 
 #nprogress .bar {
-  background: #2f86de !important;
-  height: 0.5px !important;
+  background: #4093FF !important;
+  height: 2px !important;
 }
 
 .hover {
