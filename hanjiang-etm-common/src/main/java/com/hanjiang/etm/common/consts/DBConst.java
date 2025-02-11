@@ -7,11 +7,8 @@ package com.hanjiang.etm.common.consts;
  **/
 public class DBConst {
     public static final String DB = "`hanjiang-etm`";
-    //public static final String DB = "`lahg_etm_db`";
     public static final String T_EXAM_PAPER_USER = DB + ".t_exam_paper_user";
     public static final String T_EXAM_RANDOM_OPTION = DB + ".t_exam_random_option";
-    public static final String T_NOTICE = DB + ".t_notice";
-    public static final String T_NOTICE_CLASSIFY = DB + ".t_notice_classify";
     public static final String T_EXAM = DB + ".t_exam";
     public static final String T_EXAM_CORRECTOR = DB + ".t_exam_corrector";
     public static final String T_EXAM_PAPER = DB + ".t_exam_paper";

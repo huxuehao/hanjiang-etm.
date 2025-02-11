@@ -10,17 +10,7 @@
     <module>hanjiang-etm-common</module>
     <module>hanjiang-etm-system</module>
     <module>hanjiang-etm-biz</module>
-    <module>hanjiang-etm-system/hanjiang-etm-auth</module>
-    <module>hanjiang-etm-system/hanjiang-etm-menu</module>
-    <module>hanjiang-etm-system/hanjiang-etm-org</module>
-    <module>hanjiang-etm-system/hanjiang-etm-params</module>
-    <module>hanjiang-etm-system/hanjiang-etm-resource</module>
-    <module>hanjiang-etm-system/hanjiang-etm-user</module>
-    <module>hanjiang-etm-biz/hanjiang-etm-paper</module>
-    <module>hanjiang-etm-biz/hanjiang-etm-question</module>
-    <module>hanjiang-etm-biz/hanjiang-etm-statistics</module>
-    <module>hanjiang-etm-biz/hanjiang-etm-etm</module>
-      <module>hanjiang-etm-admin</module>
+    <module>hanjiang-etm-admin</module>
   </modules>
 
   <properties>

@@ -10,6 +10,13 @@
     <artifactId>hanjiang-etm-biz</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>hanjiang-etm-paper</module>
+        <module>hanjiang-etm-question</module>
+        <module>hanjiang-etm-statistics</module>
+        <module>hanjiang-etm-etm</module>
+    </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

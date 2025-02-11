@@ -10,6 +10,15 @@
     <artifactId>hanjiang-etm-system</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>hanjiang-etm-auth</module>
+        <module>hanjiang-etm-menu</module>
+        <module>hanjiang-etm-org</module>
+        <module>hanjiang-etm-params</module>
+        <module>hanjiang-etm-resource</module>
+        <module>hanjiang-etm-user</module>
+    </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

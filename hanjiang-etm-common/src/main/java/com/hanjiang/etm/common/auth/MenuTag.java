@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 描述：辅助 @CollectionApi
+ * 描述：辅助标记菜单
  *
  * @author huxuehao
  **/
