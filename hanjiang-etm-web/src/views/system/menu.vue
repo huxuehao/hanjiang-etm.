@@ -655,7 +655,7 @@ const clickRemoveParams = (index: number) => {
           <el-form-item label="菜单名称" prop="name">
             <el-input
               placeholder="请填写菜单名称"
-              :maxLength="20"
+              maxlength="20"
               :disabled="mode === 'view'"
               v-model="formData.name"
               clearable
@@ -666,7 +666,7 @@ const clickRemoveParams = (index: number) => {
           <el-form-item label="菜单别名" prop="alias">
             <el-input
               placeholder="请填写菜单别名"
-              :maxLength="20"
+              maxlength="20"
               :disabled="mode === 'view'"
               v-model="formData.alias"
               clearable
@@ -679,7 +679,7 @@ const clickRemoveParams = (index: number) => {
           <el-form-item label="访问地址" prop="path">
             <el-input
               placeholder="请填写访问地址"
-              :maxLength="200"
+              maxlength="200"
               :disabled="mode === 'view'"
               v-model="formData.path"
               clearable
@@ -690,7 +690,7 @@ const clickRemoveParams = (index: number) => {
           <el-form-item label="菜单编号" prop="code">
             <el-input
               placeholder="请填写菜单编号"
-              :maxLength="40"
+              maxlength="40"
               :disabled="['edit', 'view'].includes(mode)"
               v-model="formData.code"
               clearable

@@ -651,7 +651,7 @@ const handleUserRoleSave = () => {
             <el-input
               placeholder="请填写用户姓名"
               v-model="formData.name"
-              :maxLength="10"
+              maxlength="10"
               :disabled="mode === 'view'"
               clearable
             >
@@ -663,7 +663,7 @@ const handleUserRoleSave = () => {
             <el-input
               placeholder="请填写用户编号"
               v-model="formData.code"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               clearable
             >
@@ -677,7 +677,7 @@ const handleUserRoleSave = () => {
             <el-input
               placeholder="请填写手机号码"
               :disabled="mode === 'view'"
-              :maxLength="11"
+              maxlength="11"
               v-model="formData.phone"
               clearable
             ></el-input>
@@ -688,7 +688,7 @@ const handleUserRoleSave = () => {
             <el-input
               placeholder="请填写用户昵称"
               v-model="formData.nickname"
-              :maxLength="10"
+              maxlength="10"
               :disabled="mode === 'view'"
               clearable
             >
@@ -719,7 +719,7 @@ const handleUserRoleSave = () => {
             <el-input
               placeholder="请填写邮箱号码"
               :disabled="mode === 'view'"
-              :maxLength="100"
+              maxlength="100"
               v-model="formData.email"
               clearable
             ></el-input>
@@ -733,7 +733,7 @@ const handleUserRoleSave = () => {
               placeholder="请填写登录账号"
               v-model="formData.account"
               :disabled="mode === 'view'"
-              :maxLength="40"
+              maxlength="40"
               clearable
             ></el-input>
           </el-form-item>
@@ -744,7 +744,7 @@ const handleUserRoleSave = () => {
               placeholder="请填写登录密码"
               v-model="formData.password"
               :disabled="mode !== 'add'"
-              :maxLength="100"
+              maxlength="100"
               type="password"
               show-password
               clearable

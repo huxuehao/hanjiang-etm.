@@ -516,7 +516,7 @@ const handleAddChild = (row: any) => {
       label-width="80px"
     >
       <el-row>
-        <el-col :span="24">
+        <el-col :span="12">
           <el-form-item label="上级组织" prop="parentId">
             <el-tree-select
               v-model="formData.parentId"
@@ -538,7 +538,7 @@ const handleAddChild = (row: any) => {
           <el-form-item label="组织名称" prop="name">
             <el-input
               placeholder="请填写组织名称"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.name"
               clearable
@@ -549,7 +549,7 @@ const handleAddChild = (row: any) => {
           <el-form-item label="组织全称" prop="fullname">
             <el-input
               placeholder="请填写组织全称"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.fullname"
               clearable
@@ -562,7 +562,7 @@ const handleAddChild = (row: any) => {
           <el-form-item label="组织编号" prop="code">
             <el-input
               placeholder="请填写组织编号"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.code"
               clearable

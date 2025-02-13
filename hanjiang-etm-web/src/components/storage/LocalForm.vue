@@ -44,7 +44,7 @@ defineExpose({form, getConfig})
         <el-form-item label="本地目录" prop="localDir">
           <el-input
             placeholder="请填写本地目录"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.localDir"
             clearable
           ></el-input>

@@ -319,7 +319,7 @@ const handleEdit = (row: any) => {
           <el-form-item label="名称" prop="paramName">
             <el-input
               placeholder="请填写名称"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.paramName"
               clearable
@@ -332,7 +332,7 @@ const handleEdit = (row: any) => {
           <el-form-item label="Key" prop="paramKey">
             <el-input
               placeholder="请填写Key"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.paramKey"
               clearable
@@ -346,7 +346,7 @@ const handleEdit = (row: any) => {
             <el-input
               placeholder="请填写Value"
               type="textarea"
-              :maxLength="200"
+              maxlength="200"
               :rows="2"
               :disabled="mode === 'view'"
               v-model="formData.paramValue"

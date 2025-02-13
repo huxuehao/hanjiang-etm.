@@ -65,7 +65,7 @@ defineExpose({form, getConfig})
         <el-form-item label="服务地址" prop="endpoint">
           <el-input
             placeholder="请填写服务地址"
-            :maxLength="35"
+            maxlength="35"
             v-model="protocolConfig.endpoint"
             clearable
           ></el-input>
@@ -77,7 +77,7 @@ defineExpose({form, getConfig})
         <el-form-item label="AccessKey" prop="accessKey">
           <el-input
             placeholder="请填写AccessKey"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.accessKey"
             clearable
           ></el-input>
@@ -89,7 +89,7 @@ defineExpose({form, getConfig})
         <el-form-item label="SecretKey" prop="secretKey">
           <el-input
             placeholder="请填写SecretKey"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.secretKey"
             clearable
           ></el-input>
@@ -101,7 +101,7 @@ defineExpose({form, getConfig})
         <el-form-item label="BucketName" prop="bucketName">
           <el-input
             placeholder="请填写BucketName"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.bucketName"
             clearable
           ></el-input>
@@ -113,7 +113,7 @@ defineExpose({form, getConfig})
         <el-form-item label="AppId" prop="appId">
           <el-input
             placeholder="请填写AppId"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.appId"
             clearable
           ></el-input>
@@ -125,7 +125,7 @@ defineExpose({form, getConfig})
         <el-form-item label="Region" prop="region">
           <el-input
             placeholder="请填写Region"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.region"
             clearable
           ></el-input>

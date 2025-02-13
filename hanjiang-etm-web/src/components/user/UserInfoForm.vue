@@ -152,7 +152,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请填写登录账号"
               v-model="formData.account"
-              :maxLength="40"
+              maxlength="40"
               clearable
             ></el-input>
           </el-form-item>
@@ -164,7 +164,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请填写用户姓名"
               v-model="formData.name"
-              :maxLength="10"
+              maxlength="10"
               clearable
             >
             </el-input>
@@ -177,7 +177,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请填写用户编号"
               v-model="formData.code"
-              :maxLength="40"
+              maxlength="40"
               clearable
             >
             </el-input>
@@ -190,7 +190,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请填写用户昵称"
               v-model="formData.nickname"
-              :maxLength="10"
+              maxlength="10"
               clearable
             >
             </el-input>
@@ -202,7 +202,7 @@ const submitRePwd = () => {
           <el-form-item label="手机号码" prop="phone">
             <el-input
               placeholder="请填写手机号码"
-              :maxLength="11"
+              maxlength="11"
               v-model="formData.phone"
               clearable
             ></el-input>
@@ -214,7 +214,7 @@ const submitRePwd = () => {
           <el-form-item label="邮箱号码" prop="email">
             <el-input
               placeholder="请填写邮箱号码"
-              :maxLength="100"
+              maxlength="100"
               v-model="formData.email"
               clearable
             ></el-input>
@@ -246,7 +246,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请填写旧密码"
               v-model="pwdFormData.oldPwd"
-              :maxLength="100"
+              maxlength="100"
               type="password"
               show-password
               clearable
@@ -260,7 +260,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请填写新密码"
               v-model="pwdFormData.newPwd"
-              :maxLength="100"
+              maxlength="100"
               type="password"
               show-password
               clearable
@@ -274,7 +274,7 @@ const submitRePwd = () => {
             <el-input
               placeholder="请再次填写新密码"
               v-model="pwdFormData.newRepwd"
-              :maxLength="100"
+              maxlength="100"
               type="password"
               show-password
               clearable

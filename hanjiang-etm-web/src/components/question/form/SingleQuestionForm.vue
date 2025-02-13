@@ -276,7 +276,7 @@ defineExpose({ config, form, genEntity, getConfig });
             <el-input
               v-model="config.title"
               type="textarea"
-              :maxlength="200"
+              maxlength="200"
               :rows="3"
               :disabled="disableEdit"
               show-word-limit
@@ -376,7 +376,7 @@ defineExpose({ config, form, genEntity, getConfig });
             <el-input
               v-model="config.analysis"
               type="textarea"
-              :maxlength="500"
+              maxlength="500"
               :rows="3"
               :disabled="disableEdit"
               show-word-limit

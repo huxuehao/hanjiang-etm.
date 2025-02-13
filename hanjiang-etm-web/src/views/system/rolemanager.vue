@@ -520,30 +520,32 @@ const handleAuthConfigSave = () => {
             ></el-tree-select>
           </el-form-item>
         </el-col>
+      </el-row>
+      <el-row :gutter="0">
         <el-col :span="12">
           <el-form-item label="角色名称" prop="name">
             <el-input
               placeholder="请填写角色名称"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.name"
               clearable
             ></el-input>
           </el-form-item>
         </el-col>
-      </el-row>
-      <el-row :gutter="0">
         <el-col :span="12">
           <el-form-item label="组织编号" prop="code">
             <el-input
               placeholder="请填写组织编号"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view'"
               v-model="formData.code"
               clearable
             ></el-input>
           </el-form-item>
         </el-col>
+      </el-row>
+      <el-row :gutter="0">
         <el-col :span="12">
           <el-form-item label="角色排序" prop="sort">
             <el-input
@@ -555,8 +557,6 @@ const handleAuthConfigSave = () => {
             ></el-input>
           </el-form-item>
         </el-col>
-      </el-row>
-      <el-row :gutter="0">
         <el-col :span="12">
           <el-form-item label="是否有效" prop="valid">
             <!-- <el-switch 

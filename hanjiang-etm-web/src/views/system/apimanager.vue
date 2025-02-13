@@ -682,7 +682,7 @@ const changePageSize = (pageSize: number) => {
             <el-input
               placeholder="请填写接口名称"
               v-model="formData.name"
-              :maxLength="10"
+              maxlength="10"
               :disabled="mode === 'view'"
               clearable
             >
@@ -696,7 +696,7 @@ const changePageSize = (pageSize: number) => {
             <el-input
               placeholder="请填写权限编号"
               v-model="formData.code"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view' || formData.type === 1"
               clearable
             >
@@ -726,7 +726,7 @@ const changePageSize = (pageSize: number) => {
             <el-input
               placeholder="请填写接口路径"
               v-model="formData.path"
-              :maxLength="40"
+              maxlength="40"
               :disabled="mode === 'view' || formData.type === 1"
               clearable
             >

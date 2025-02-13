@@ -65,7 +65,7 @@ defineExpose({form, getConfig})
         <el-form-item label="Host" prop="host">
           <el-input
             placeholder="请填写Host"
-            :maxLength="15"
+            maxlength="15"
             v-model="protocolConfig.host"
             clearable
           ></el-input>
@@ -77,7 +77,7 @@ defineExpose({form, getConfig})
         <el-form-item label="port" prop="port">
           <el-input
             placeholder="请填写Port"
-            :maxLength="6"
+            maxlength="6"
             v-model="protocolConfig.port"
             clearable
           ></el-input>
@@ -89,7 +89,7 @@ defineExpose({form, getConfig})
         <el-form-item label="UserName" prop="userName">
           <el-input
             placeholder="请填写UserName"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.userName"
             clearable
           ></el-input>
@@ -101,7 +101,7 @@ defineExpose({form, getConfig})
         <el-form-item label="Password" prop="password">
           <el-input
             placeholder="请填写Password"
-            :maxLength="100"
+            maxlength="100"
             v-model="protocolConfig.password"
             clearable
           ></el-input>

@@ -508,7 +508,7 @@ const handelSaveProtocol = () => {
           <el-form-item label="存储名称" prop="name">
             <el-input
               placeholder="请填写存储名称"
-              :maxLength="20"
+              maxlength="20"
               :disabled="mode === 'view'"
               v-model="formData.name"
               clearable
@@ -534,7 +534,7 @@ const handelSaveProtocol = () => {
           <el-form-item label="备注" prop="remark">
             <el-input
               placeholder="请填写备注"
-              :maxLength="100"
+              maxlength="100"
               :disabled="mode === 'view'"
               v-model="formData.remark"
               clearable
