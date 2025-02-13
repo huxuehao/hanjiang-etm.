@@ -396,6 +396,7 @@ const handleUserRoleSave = () => {
       <div class="resize-left-box">
         <SearchTree
           :data="orgTreeList"
+          title="组织机构树"
           @node-click="handleNodeClick"
           height="calc(100vh - 170px)"
         ></SearchTree>
