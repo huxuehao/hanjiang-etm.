@@ -112,7 +112,7 @@ const questionTypeChange = (value: any, index: number) => {
   if (res.length > 1) {
     ElMessageBox.confirm("当前所选题目类型已存在，请重新选择", "题目类型重复", {
       confirmButtonText: "确定",
-      showClose: false,
+      showClose: true,
       showCancelButton: false,
       type: "warning",
     }).then(() => {

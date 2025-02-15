@@ -120,7 +120,7 @@ const questionDialogProp = reactive({
   width: '75%',
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 })
 let questionNumber = ref(0)
 
@@ -168,7 +168,7 @@ const dialogPropPreview = reactive({
   width: '75%',
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 })
 //试题预览
 const handleQuestionView = (row: any) => {

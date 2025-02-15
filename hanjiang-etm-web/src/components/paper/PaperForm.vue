@@ -276,7 +276,7 @@ const questionDialogProp = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
   closeOnClickModal: false
 });
 // 添加自定义试题
@@ -347,7 +347,7 @@ const dialogPropPreview = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 // 实际预览操作
 const previewDo = (config: any) => {

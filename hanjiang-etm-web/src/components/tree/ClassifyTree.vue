@@ -31,7 +31,7 @@ const dialogProp = reactive({
   width: "35%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 const config = ref<any>({
   id: null,

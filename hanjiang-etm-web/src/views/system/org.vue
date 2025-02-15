@@ -133,7 +133,7 @@ const dialogProp = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
   closeOnClickModal: false,
 });
 // 点击新增
@@ -164,7 +164,7 @@ const handleAddDo = () => {
             load();
             tree();
           })
-          .catch(() => {
+          .finally(() => {
             stopBtn.value = false;
           });
       } else if (mode.value === "edit") {
@@ -179,7 +179,7 @@ const handleAddDo = () => {
             load();
             tree();
           })
-          .catch(() => {
+          .finally(() => {
             stopBtn.value = false;
           });
       } else {

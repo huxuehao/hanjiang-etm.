@@ -211,7 +211,7 @@ const emits = defineEmits(["answer", "correct", "close"]);
 const handleTimeout = () => {
   ElMessageBox.confirm("答题时间已经用完，系统已自动完成交卷！", "提示", {
     confirmButtonText: "确定",
-    showClose: false,
+    showClose: true,
     showCancelButton: false,
     type: "warning",
   }).then(() => {

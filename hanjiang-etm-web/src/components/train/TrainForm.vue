@@ -369,7 +369,7 @@ const questionDialogProp = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 let selectedQuestionRows = ref<any>([]);
 
@@ -477,7 +477,7 @@ const dialogPropPreview = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 const previewDo = (config: any) => {
   questionConfig.value = config;
@@ -553,7 +553,7 @@ const dialogFileMore = reactive({
   width: "50%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 // 点击资料-更多
 const handleMoreFile = (row: any) => {

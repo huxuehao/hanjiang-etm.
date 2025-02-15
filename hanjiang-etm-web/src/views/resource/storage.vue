@@ -144,7 +144,7 @@ const dialogProp = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
   closeOnClickModal: false,
 });
 // 点击新增
@@ -173,7 +173,7 @@ const handleAddDo = () => {
             });
             load();
           })
-          .catch(() => {
+          .finally(() => {
             stopBtn.value = false;
           });
       } else if (mode.value === "edit") {
@@ -187,7 +187,7 @@ const handleAddDo = () => {
             });
             load();
           })
-          .catch(() => {
+          .finally(() => {
             stopBtn.value = false;
           });
       } else {
@@ -268,7 +268,7 @@ const dialogPropProtocol = reactive({
   width: "50%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
   closeOnClickModal: false,
 });
 const handelOpenProtocol = (row: any) => {

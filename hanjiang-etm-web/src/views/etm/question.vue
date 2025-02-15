@@ -189,7 +189,7 @@ const dialogProp = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
   closeOnClickModal: false,
 });
 
@@ -267,7 +267,7 @@ const handleAddDo = () => {
             });
             load();
           })
-          .catch(() => {
+          .finally(() => {
             stopBtn.value = false;
           });
       } else if (mode.value === "edit") {
@@ -281,7 +281,7 @@ const handleAddDo = () => {
             });
             load();
           })
-          .catch(() => {
+          .finally(() => {
             stopBtn.value = false;
           });
       } else {
@@ -314,7 +314,7 @@ const dialogPropPreview = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 const previewDo = (conf: any) => {
   config.value = conf;
@@ -414,7 +414,7 @@ const dialogPropImport = {
   width: "75%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
   fullscreen: true,
   closeOnPressEscape: false,
 };

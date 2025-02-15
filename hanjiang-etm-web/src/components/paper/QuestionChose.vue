@@ -143,7 +143,7 @@ const dialogPropPreview = reactive({
   width: "60%",
   modal: true,
   appendToBody: true,
-  showClose: false,
+  showClose: true,
 });
 
 let currentType = ref(0);
