@@ -48,5 +48,4 @@ mybatis-plus:
 # 日志级别
 logging:
   level:
-    com.tiger.job: off
-    com.tiger.job.core: debug
+    com.hanjiang.etm: debug # off
