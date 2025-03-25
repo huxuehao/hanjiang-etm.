@@ -134,33 +134,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <!--私服仓库-->
-    <repository>
-      <id>Private Nexus Repository</id>
-      <name>aoip Nexus Repository</name>
-      <url>http://111.205.100.116:8081/repository/maven-public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
-  <distributionManagement>
-    <repository>
-      <id>aoip-releases</id>
-      <url>http://111.205.100.116:8081/repository/aoip-releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>aoip-snapshots</id>
-      <url>http://111.205.100.116:8081/repository/aoip-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
-
-
   <build>
     <resources>
       <resource>
